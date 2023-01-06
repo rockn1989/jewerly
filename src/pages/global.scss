@@ -1,0 +1,36 @@
+@import '../scss/variables';
+@import '../scss/fonts';
+
+:root {
+  --prime: #333333;
+  --white: #ffffff;
+  --gray: #F9F9F9;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1.6rem;
+  line-height: 2.5rem;
+  color: var(--prime);
+  font-family: $mainFont;
+  font-weight: 400;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  max-width: $containerWidth;
+}
