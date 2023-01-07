@@ -10,6 +10,10 @@
 html {
   font-size: 62.5%;
 
+  @media (min-width: 1600px) {
+    font-size: 75%;
+  }
+
   @media (max-width: $desk-w) {
     font-size: 56%;
   }
@@ -41,4 +45,24 @@ body {
   margin: 0 auto;
   padding: 0 2.5rem;
   max-width: $containerWidth;
+
+  @media (min-width: 1600px) {
+    max-width: 116rem;
+  }
+}
+
+
+*::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgba(51, 51, 51, 0.57)
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--white);
+  border-radius: 15px;
+  border: 2px solid rgba(51, 51, 51, 0.57)
 }
