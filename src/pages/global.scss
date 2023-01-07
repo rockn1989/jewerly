@@ -9,6 +9,14 @@
 
 html {
   font-size: 62.5%;
+
+  @media (max-width: $desk-w) {
+    font-size: 56%;
+  }
+
+  @media (max-width: $mob-s) {
+    font-size: 50%;
+  }
 }
 
 html,

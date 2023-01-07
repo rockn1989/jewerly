@@ -1,0 +1,104 @@
+@use '../../scss/variables';
+
+.productFilter {
+  margin: 10rem 0 12rem;
+}
+
+.header {
+  text-align: center;
+}
+
+.smallTitle {
+  font-size: 2.1rem;
+  line-height: 3rem;
+}
+
+.tabsList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-bottom: 6rem;
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+
+
+  @media (max-width: variables.$desk-w) {
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+}
+
+.tabsSpan {
+  position: relative;
+  padding: 1.7rem 0.8rem;
+  display: block;
+  text-align: center;
+  font-size: 1.8rem;
+  line-height: 2.1rem;
+  font-weight: 500;
+  min-width: 16.5rem;
+  border: 1px solid var(--prime);
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: var(--white);
+  transition: background-color 0.3s, color 0.3s ease;
+
+  &:after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid var(--prime);
+    z-index: -1;
+    transform: translate(0.6rem, 0.6rem);
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    color: var(--white);
+    background-color: var(--prime);
+
+    &:after {
+      transform: translate(0, 0);
+    }
+  }
+
+  &.active {
+    background-color: var(--prime);
+    color: var(--white);
+
+    &:after {
+      transform: translate(0, 0);
+    }
+  }
+}
+
+.tabsContentItem {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+.tabsContent,
+.cardsList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cardsList {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+
+  @media (min-width: variables.$mob-s) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: variables.$tablet-w) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+}

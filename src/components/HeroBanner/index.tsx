@@ -15,7 +15,7 @@ export const HeroBanner = () => {
   const width = useWidth();
 
   return (
-    <div className={styles.heroBanner}>
+    <section className={styles.heroBanner}>
       <Image
         width={1920}
         height={950}
@@ -24,14 +24,14 @@ export const HeroBanner = () => {
         className={styles.heroBannerImg}
       />
       <div className={styles.greetings}>
-        <Title as='h1' text={MockHeroBanner.title} />
+        <Title as='h2' text={MockHeroBanner.title} />
         <Button variant='black'>{MockHeroBanner.buttonText}</Button>
       </div>
-      {(width && width > 768) && (
+      {(width && width >= 768) && (
         <div className="container">
           <BrandsList />
         </div>
       )}
-    </div>
+    </section>
   )
 }

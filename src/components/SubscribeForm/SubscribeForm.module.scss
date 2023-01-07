@@ -1,0 +1,26 @@
+.subscribeForm {
+  padding: 1.4rem;
+  border: 1px solid var(--white);
+}
+
+.wrapper {
+  padding: 2rem 2.2rem;
+  background: var(--white);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  flex: 1 1;
+}
+
+.input {
+  padding: 1.3rem 1.4rem;
+  border: 1px solid #D6D6D6;
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+  font-weight: 500;
+  flex: 1 1;
+
+  &::placeholder {
+    text-transform: uppercase;
+  }
+}

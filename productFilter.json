@@ -1,0 +1,28 @@
+{
+  "productFilter": [
+    {
+      "title": "Кольца",
+      "image": "/images/content-img/content-img-1.png"
+    },
+    {
+      "title": "серьги",
+      "image": "/images/content-img/content-img-2.png"
+    },
+    {
+      "title": "подвески",
+      "image": "/images/content-img/content-img-3.png"
+    },
+    {
+      "title": "запонки",
+      "image": "/images/content-img/content-img-4.png"
+    },
+    {
+      "title": "браслеты",
+      "image": "/images/content-img/content-img-5.png"
+    },
+    {
+      "title": "часы",
+      "image": "/images/content-img/content-img-6.png"
+    }
+  ]
+}

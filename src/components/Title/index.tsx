@@ -3,7 +3,7 @@ import { TitleProps } from './Title.props';
 import styles from './Title.module.scss';
 import cn from 'classnames';
 
-export const Title = ({ as: Tag, text, className, ...props }: TitleProps): JSX.Element => {
+export const Title = ({ as: Tag, text, className, ...props }: TitleProps) => {
   let variant = '';
 
   switch (Tag) {

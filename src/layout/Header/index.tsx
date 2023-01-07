@@ -3,16 +3,26 @@ import styles from './Header.module.scss';
 import cn from 'classnames';
 import { Logo, Navigation, Search } from '../../components';
 import { ActionsBar } from '../../components/ActionsBar';
+import { useWidth } from '../../hooks/useWidth';
 
 export const Header = ({ className, ...props }: HeaderProps) => {
+
+  const width = useWidth();
+
   return (
     <header {...props} className={cn(className, styles.header)}>
       <div className="container">
         <div className={styles.grid}>
-          <Navigation className={styles.nav} />
           <Logo className={styles.logo} />
-          <Search className={styles.search} />
-          <ActionsBar className={styles.actionBar} />
+
+          {(width && width >= 960) && (
+            <>
+              <Navigation className={styles.nav} />
+              <Search className={styles.search} />
+              <ActionsBar className={styles.actionBar} />
+            </>
+          )}
+
         </div>
       </div>
     </header>
