@@ -1,28 +1,88 @@
 {
-  "productFilter": [
+  "catalogCards": [
     {
-      "title": "Кольца",
-      "image": "/images/content-img/content-img-1.png"
+      "title": "Dolce & Gabanna",
+      "type": "type-1",
+      "image": "/images/content-img/content-img-16.png",
+      "slug": "1",
+      "price": 7500
     },
     {
-      "title": "серьги",
-      "image": "/images/content-img/content-img-2.png"
+      "title": "Dolce & Gabanna",
+      "type": "type-3",
+      "image": "/images/content-img/content-img-16.png",
+      "slug": "2",
+      "price": 1700
     },
     {
-      "title": "подвески",
-      "image": "/images/content-img/content-img-3.png"
+      "title": "Dolce & Gabanna",
+      "type": "type-2",
+      "image": "/images/content-img/content-img-16.png",
+      "slug": "3",
+      "price": 1500
     },
     {
-      "title": "запонки",
-      "image": "/images/content-img/content-img-4.png"
+      "title": "Dolce & Gabanna",
+      "type": "type-4",
+      "image": "/images/content-img/content-img-16.png",
+      "slug": "4",
+      "price": 175
     },
     {
-      "title": "браслеты",
-      "image": "/images/content-img/content-img-5.png"
+      "title": "Dolce & Gabanna",
+      "type": "type-1",
+      "image": "/images/content-img/content-img-16.png",
+      "slug": "5",
+      "price": 10000
     },
     {
-      "title": "часы",
-      "image": "/images/content-img/content-img-6.png"
+      "title": "Dolce & Gabanna",
+      "type": "type-3",
+      "image": "/images/content-img/content-img-16.png",
+      "slug": "6",
+      "price": 5000
+    },
+    {
+      "title": "Dolce & Gabanna",
+      "type": "type-3",
+      "image": "/images/content-img/content-img-16.png",
+      "slug": "7",
+      "price": 17500
+    },
+    {
+      "title": "Dolce & Gabanna",
+      "type": "type-2",
+      "image": "/images/content-img/content-img-16.png",
+      "slug": "8",
+      "price": 1700
+    },
+    {
+      "title": "Dolce & Gabanna",
+      "type": "type-4",
+      "image": "/images/content-img/content-img-16.png",
+      "slug": "9",
+      "price": 175000
+    },
+    {
+      "title": "Dolce & Gabanna",
+      "type": "type-1",
+      "image": "/images/content-img/content-img-16.png",
+      "slug": "10",
+      "price": 45000
+    },
+    {
+      "title": "Dolce & Gabanna",
+      "type": "type-1",
+      "image": "/images/content-img/content-img-16.png",
+      "slug": "11",
+      "price": 67000
+    },
+    {
+      "title": "Dolce & Gabanna",
+      "type": "type-2",
+      "image": "/images/content-img/content-img-16.png",
+      "slug": "12",
+      "price": 99999
     }
   ]
 }

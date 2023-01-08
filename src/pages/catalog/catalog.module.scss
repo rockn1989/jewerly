@@ -1,0 +1,38 @@
+@use '../../scss/variables';
+
+.catalog {
+  margin-bottom: 15rem;
+  padding-top: 21rem;
+}
+
+.catalogList {
+  margin-bottom: 9.5rem;
+}
+
+.catalogRow {
+  margin-bottom: 9.5rem;
+  padding: 0 3.5rem 9.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10rem;
+  border-bottom: 1px solid #D6D6D6;
+
+  &:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  @media (min-width: variables.$mob-s) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: variables.$tablet-w) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.catalogButton {
+  margin: 0 auto;
+  display: block;
+}

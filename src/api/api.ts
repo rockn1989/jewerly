@@ -8,5 +8,8 @@ export const API = {
   },
   posts: {
     url: 'https://gist.githubusercontent.com/rockn1989/0c42d83a4e3f88b35aa53e76e183089d/raw/3e189d036e55b5c1194323af9590500392c3599a/posts.json'
+  },
+  catalogCards: {
+    url: 'https://gist.githubusercontent.com/rockn1989/e692627663e79243c3df5b03fb183180/raw/9fa17552570b5128f84be9ca204d6e4ae594db70/catalogCards.json'
   }
 }
