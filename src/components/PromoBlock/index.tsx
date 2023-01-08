@@ -1,10 +1,10 @@
-
 import { PromoBlockProps } from './PromoBlock.props';
-import styles from './PromoBlock.module.scss';
-import cn from 'classnames';
 import { Title } from '../Title';
-import { Button } from '../Button';
 import { SubscribeForm } from '../SubscribeForm';
+import { CustomLink } from '../CustomLink';
+
+import cn from 'classnames';
+import styles from './PromoBlock.module.scss';
 
 export const PromoBlock = ({ title, smallTitle, description, isForm = false, className, ...props }: PromoBlockProps) => {
   return (
@@ -26,7 +26,7 @@ export const PromoBlock = ({ title, smallTitle, description, isForm = false, cla
         ) : (
           <div className={styles.description}>
             <div className={styles.text}>{description}</div>
-            <Button variant='white'>Наш салон</Button>
+            <CustomLink variant='white' slug='/catalog'>Наш салон</CustomLink>
           </div>
         )}
       </div>

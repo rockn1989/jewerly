@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { useWidth } from '../../hooks/useWidth';
 import { BrandsList } from '../BrandsList';
-import { Button } from '../Button';
+import { CustomLink } from '../CustomLink';
 import { Title } from '../Title';
 
 import styles from './HeroBanner.module.scss';
@@ -25,7 +25,7 @@ export const HeroBanner = () => {
       />
       <div className={styles.greetings}>
         <Title as='h2' text={MockHeroBanner.title} />
-        <Button variant='black'>{MockHeroBanner.buttonText}</Button>
+        <CustomLink variant='black' slug='/catalog'>{MockHeroBanner.buttonText}</CustomLink>
       </div>
       {(width && width >= 768) && (
         <div className="container">

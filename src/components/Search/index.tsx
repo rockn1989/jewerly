@@ -1,7 +1,8 @@
 import { SearchProps } from "./Search.props"
+import { SearchIcon } from "../Icons";
+
 import cn from 'classnames';
 import styles from './Search.module.scss';
-import { SearchIcon } from "../Icons";
 
 export const Search = ({ className, ...props }: SearchProps): JSX.Element => {
   return (

@@ -42,3 +42,16 @@
   object-position: center;
   z-index: 1;
 }
+
+.vertical {
+  padding-bottom: 106%;
+}
+
+.vertical .cardTitleLink {
+  margin: 0 auto;
+  max-width: 20.6rem;
+  font-size: 2.1rem;
+  line-height: 2.4rem;
+  text-transform: none;
+  font-weight: 400;
+}

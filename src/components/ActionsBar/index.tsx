@@ -1,5 +1,6 @@
-import Link from "next/link"
-import { FavoriteIcon, UserIcon } from "../Icons"
+import Link from "next/link";
+import { FavoriteIcon, UserIcon } from "../Icons";
+
 import styles from './ActionsBar.module.scss';
 import cn from 'classnames';
 

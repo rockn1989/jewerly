@@ -1,0 +1,27 @@
+.black,
+.white {
+  padding: 1.5rem 3.5rem;
+  font-size: 1.8rem;
+  line-height: 2.1rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.black {
+  color: var(--white);
+  background: var(--prime);
+}
+
+.white {
+  color: var(--prime);
+  background-color: var(--white);
+}
+
+.small {
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+}

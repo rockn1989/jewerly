@@ -1,7 +1,7 @@
-
 import { ButtonProps } from './Button.props';
-import styles from './Button.module.scss';
+
 import cn from 'classnames';
+import styles from './Button.module.scss';
 
 export const Button = ({ variant, size, children, className, ...props }: ButtonProps): JSX.Element => {
 
