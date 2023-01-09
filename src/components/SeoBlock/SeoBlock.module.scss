@@ -1,0 +1,73 @@
+@use '../../scss/variables';
+
+.seoBlock {
+  margin: 0 auto 15rem;
+  padding: 0 2.5rem;
+  max-width: 970px;
+}
+
+.description {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem 10rem;
+
+  @media (min-width: variables.$mob-s) {
+    grid-template-columns: 1fr min-content;
+    align-items: flex-start;
+  }
+}
+
+.seoAdv {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem 6rem;
+  text-align: center;
+}
+
+.advImage {
+  margin-bottom: 1.5rem;
+  width: 100%;
+  height: 7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shortText {
+  position: relative;
+  max-height: 15rem;
+  overflow: hidden;
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 7.5rem;
+    background: linear-gradient(to top, #ffffff 0%, transparent 100%);
+  }
+
+  &.showed {
+    max-height: none;
+
+    &:after {
+      display: none;
+    }
+  }
+}
+
+.seoButton {
+  margin: 3rem 0 0;
+  padding: 0;
+  font-size: 1.8rem;
+  line-height: 2.1rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  background: none;
+  cursor: pointer;
+  border: none;
+  letter-spacing: 0.1rem;
+  border-bottom: 1px dashed #333333;
+}

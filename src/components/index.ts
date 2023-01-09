@@ -11,6 +11,7 @@ import { PromoBlock } from './PromoBlock';
 import { Blog } from './Blog';
 import { SubscribeForm } from './SubscribeForm';
 import { SocialBlock } from './SocialBlock';
+import { SeoBlock } from './SeoBlock';
 
 export {
   Logo,
@@ -26,4 +27,5 @@ export {
   Blog,
   SubscribeForm,
   SocialBlock,
+  SeoBlock,
 }

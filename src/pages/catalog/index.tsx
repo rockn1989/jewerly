@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Layout } from "../../layout";
 import { CardCatalog } from "../../components/CardCatalog";
-import { Button, PromoBlock } from "../../components";
+import { Button, PromoBlock, SeoBlock } from "../../components";
 import { API } from "../../api/api";
 import { CatalogPageProps } from "./catalog.props";
 import axios from "axios";
@@ -26,7 +26,6 @@ const Catalog = ({ catalogCards }: CatalogPageProps) => {
   return (
     <Layout>
       <section className={styles.catalog}>
-
         <div className="container">
           <div className={styles.catalogList}>
             {Array(rows).fill('').map((_, index) => {
@@ -55,9 +54,13 @@ const Catalog = ({ catalogCards }: CatalogPageProps) => {
                 Покажите еще
               </Button>
             )}
-        </div>
 
+
+
+        </div>
       </section>
+
+      <SeoBlock />
 
       <PromoBlock
         title={MockPromoBlock.title}
@@ -72,7 +75,6 @@ export async function getStaticProps() {
 
   const { data: catalogData } = await axios.get(API.catalogCards.url);
   const { catalogCards } = catalogData;
-  console.log(catalogCards)
 
   return {
     props: {
