@@ -4,5 +4,5 @@ export interface PromoBlockProps extends DetailedHTMLProps<HTMLAttributes<HTMLDi
   title: string,
   smallTitle: string,
   description?: string
-  isForm?: boolean
+  withForm?: boolean
 }

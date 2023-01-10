@@ -1,0 +1,101 @@
+@use '../../../scss/variables';
+
+.detailPage {
+  margin: 13.5rem 0 12rem;
+}
+
+.product {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: flex-start;
+  gap: 3rem;
+
+  @media (min-width: variables.$tablet-w) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.productDescription {
+  @media (min-width: variables.$tablet-w) {
+    order: 2;
+  }
+}
+
+.productSlider {
+  @media (min-width: variables.$tablet-w) {
+    order: 1;
+  }
+}
+
+.productDescription {
+  padding: 5rem 4rem;
+  border: 1px solid #D6D6D6;
+  outline: 1px solid #D6D6D6;
+  outline-offset: -1rem;
+}
+
+.title {
+  margin-bottom: 3rem;
+  font-size: 2.4rem;
+  line-height: 2.8rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-family: variables.$mainFont;
+}
+
+.info {
+  margin-bottom: 3rem;
+  padding-bottom: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+  gap: 2.5rem;
+  color: #979797;
+  border-bottom: 1px solid #D6D6D6;
+}
+
+.infoBar {
+  display: inline-flex;
+  gap: 1.5rem;
+  flex: 1;
+  white-space: nowrap;
+}
+
+.text {
+  margin-bottom: 3rem;
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+}
+
+.price {
+  margin-bottom: 3rem;
+  font-size: 2.4rem;
+  line-height: 3rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: 1fr;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 1.5rem 3rem;
+
+  @media (min-width: variables.$mob-s) {
+    grid-template-columns: auto auto;
+  }
+}
+
+.buttonBorder {
+  padding: 1.5rem 2rem;
+  border: 1px solid var(--prime);
+  white-space: nowrap;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+}

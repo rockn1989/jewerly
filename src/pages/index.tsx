@@ -47,7 +47,7 @@ export default function Home({ productFilter, blog, posts }: HomeProps) {
       <PromoBlock
         title={MockPromoBlockTwo.title}
         smallTitle={MockPromoBlockTwo.smallTitle}
-        isForm={true}
+        withForm={true}
       />
     </Layout>
   )

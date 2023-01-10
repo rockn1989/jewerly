@@ -5,6 +5,7 @@ import { Button } from '../Button';
 import cn from 'classnames';
 import styles from './SeoBlock.module.scss';
 import { useState } from 'react';
+import { Title } from '../Title';
 
 const MockSeoBlock = {
   text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet, lorem eu commodo porttitor erat. Amet mauris cursus bibendum in egestas. Nulla porttitor amet quam elit, mauris. Tortor egestas dignissim augue suspendisse rutrum pretium lobortis dolor. Commodo sagittis at amet faucibus faucibus id. Bibendum placerat convallis gravida eu quisque et augue. Sed dignissim amet ut vitae at ornare sed. Commodo sagittis at amet faucibus faucibus id. Bibendum placerat convallis gravida eu quisque et augue. Sed dignissim amet ut vitae at ornare sed.',
@@ -37,11 +38,15 @@ const MockSeoBlock = {
   ]
 }
 
-export const SeoBlock = ({ className, ...props }: SeoBlockProps) => {
+export const SeoBlock = ({ withTitle = false, title, className, ...props }: SeoBlockProps) => {
   const [show, setIsShow] = useState<boolean>(false);
 
   return (
     <section className={cn(className, styles.seoBlock)} {...props}>
+
+      {withTitle && title && (
+        <Title as="h2" text={title} className={styles.title} />
+      )}
 
       <div className={styles.description}>
         <div className={styles.seoText}>

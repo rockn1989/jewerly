@@ -65,7 +65,7 @@ const Catalog = ({ catalogCards }: CatalogPageProps) => {
       <PromoBlock
         title={MockPromoBlock.title}
         smallTitle={MockPromoBlock.smallTitle}
-        isForm={true}
+        withForm={true}
       />
     </Layout>
   )
