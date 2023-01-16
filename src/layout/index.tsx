@@ -11,6 +11,7 @@ export const Layout = ({ children }: LayoutProps): JSX.Element => {
         {children}
       </main>
       <Footer className={styles.footer} />
+      <div id="portal"></div>
     </div>
   )
 }

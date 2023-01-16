@@ -3,10 +3,20 @@ import { Layout } from "../../layout";
 import { CardCatalog } from "../../components/CardCatalog";
 import { Button, PromoBlock, SeoBlock } from "../../components";
 import { API } from "../../api/api";
-import { CatalogPageProps } from "./catalog.props";
 import axios from "axios";
 
 import styles from './catalog.module.scss';
+
+
+interface CatalogPageProps {
+  catalogCards: {
+    title: string,
+    type: string,
+    price: number,
+    image: string,
+    slug: string,
+  }[]
+}
 
 const MockPromoBlock = {
   title: 'Эксклюзивная рассылка',

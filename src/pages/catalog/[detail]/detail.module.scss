@@ -48,6 +48,7 @@
   padding-bottom: 3rem;
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-start;
   font-size: 1.4rem;
   line-height: 2.1rem;
   gap: 2.5rem;
@@ -58,7 +59,6 @@
 .infoBar {
   display: inline-flex;
   gap: 1.5rem;
-  flex: 1;
   white-space: nowrap;
 }
 
@@ -90,12 +90,59 @@
 }
 
 .buttonBorder {
-  padding: 1.5rem 2rem;
+  padding: 1.5rem;
   border: 1px solid var(--prime);
-  white-space: nowrap;
 }
 
 .image {
   width: 100%;
   height: auto;
+}
+
+.pay {
+  padding: 4rem 6rem;
+  max-width: 76rem;
+  width: calc(100% - 2rem);
+  text-align: center;
+  background: #F9F9F9;
+  border-radius: 1rem;
+
+  @media (min-width: variables.$desk-w) {
+    padding: 9rem 12rem;
+
+  }
+}
+
+.payTitle {
+  margin-bottom: 1rem;
+  font-size: 2.8rem;
+  line-height: 3rem;
+}
+
+.payText {
+  margin: 0;
+}
+
+.payButton {
+  margin-top: 3rem;
+}
+
+.notification {
+  padding: 3rem;
+  max-width: 474px;
+  background: #F9F9F9;
+  box-shadow: 1rem 1rem 1.5rem rgba(0, 0, 0, 0.25);
+  border-radius: 2.4rem;
+}
+
+.notificationTitle {
+  margin-bottom: 1.7rem;
+  font-size: 2.2rem;
+  line-height: 2.6rem;
+}
+
+.notificationText {
+  margin: 0;
+  font-size: 1.8rem;
+  line-height: 2.1rem;
 }

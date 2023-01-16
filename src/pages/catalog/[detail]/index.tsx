@@ -6,8 +6,8 @@ import axios from "axios";
 
 import cn from 'classnames';
 import styles from './detail.module.scss';
-import { DetailedHTMLProps, HTMLAttributes } from "react";
-import { Button, PromoBlock, SeoBlock, Title } from "../../../components";
+import { DetailedHTMLProps, HTMLAttributes, useState } from "react";
+import { Button, Portal, PromoBlock, SeoBlock, Title } from "../../../components";
 
 interface DetailPageProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   title: string;
@@ -36,6 +36,9 @@ const MockDetailPage = {
 
 const DetailPage = ({ title, type, image, price, description, className, ...props }: DetailPageProps) => {
 
+  const [visible, setIsVisible] = useState<boolean>(false);
+  const [notification, setNotification] = useState<boolean>(false);
+
   return (
     <Layout>
       <section className={cn(className, styles.detailPage)} {...props}>
@@ -53,8 +56,20 @@ const DetailPage = ({ title, type, image, price, description, className, ...prop
               <div className={styles.price}>{price}</div>
 
               <div className={styles.buttons}>
-                <Button variant='black'>{MockDetailPage.buttons.buy}</Button>
-                <Button variant='white' className={styles.buttonBorder}>{MockDetailPage.buttons.add}</Button>
+                <Button
+                  variant='black'
+                  onClick={() => setIsVisible(!visible)}
+                >
+                  {MockDetailPage.buttons.buy}
+                </Button>
+
+                <Button
+                  variant='white'
+                  className={styles.buttonBorder}
+                  onClick={() => setNotification(!notification)}
+                >
+                  {MockDetailPage.buttons.add}
+                </Button>
               </div>
             </div>
 
@@ -76,6 +91,49 @@ const DetailPage = ({ title, type, image, price, description, className, ...prop
         smallTitle={MockDetailPage.promoBlock.smallTitle}
         withForm={true}
       />
+
+      {
+        visible && (
+          <Portal
+            show={visible}
+            onClickForClose={() => setIsVisible(!visible)}
+            className={styles.pay}
+          >
+            <div>
+              <Title
+                as="h2"
+                text={"Онлайн оплата временно не доступна"}
+                className={styles.payTitle}
+              />
+              <p className={styles.payText}>Выбрать и оплатить товар вы можете в нашем фирменном магазине</p>
+              <Button
+                variant='black'
+                className={styles.payButton}
+                onClick={() => setIsVisible(!visible)}
+              >Понятно</Button>
+            </div>
+          </Portal>
+        )
+      }
+
+      {
+        notification && (
+          <Portal
+            show={notification}
+            onClickForClose={() => setNotification(!notification)}
+            className={styles.notification}
+          >
+            <div>
+              <Title
+                as="h2"
+                text={"Подвеска Dolce & Gabbara (1)"}
+                className={styles.notificationTitle}
+              />
+              <p className={styles.notificationText}>Товар добавлен в корзину</p>
+            </div>
+          </Portal>
+        )
+      }
     </Layout>
   )
 }
@@ -90,7 +148,6 @@ export async function getStaticPaths() {
       params: { detail: slug },
     }
   });
-
 
   return {
     paths: pathsCards,
@@ -108,6 +165,12 @@ export async function getStaticProps({
   const { catalogCards } = catalogData;
 
   const card = catalogCards.find(({ slug }: DetailPageProps) => slug === params.detail);
+
+  if (!card) {
+    return {
+      notFound: true
+    }
+  }
 
   return {
     props: {

@@ -10,8 +10,10 @@ import { CardProduct } from './CardProduct';
 import { PromoBlock } from './PromoBlock';
 import { Blog } from './Blog';
 import { SubscribeForm } from './SubscribeForm';
+import { Input } from './Input';
 import { SocialBlock } from './SocialBlock';
 import { SeoBlock } from './SeoBlock';
+import { Portal } from './Portal';
 
 export {
   Logo,
@@ -26,6 +28,8 @@ export {
   PromoBlock,
   Blog,
   SubscribeForm,
+  Input,
   SocialBlock,
   SeoBlock,
+  Portal,
 }
