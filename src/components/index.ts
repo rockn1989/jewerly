@@ -16,20 +16,23 @@ import { SeoBlock } from './SeoBlock';
 import { Portal } from './Portal';
 
 export {
-  Logo,
-  Navigation,
-  Search,
-  Title,
-  Button,
-  CustomLink,
-  BrandsList,
-  ProductFilter,
-  CardProduct,
-  PromoBlock,
-  Blog,
-  SubscribeForm,
-  Input,
-  SocialBlock,
-  SeoBlock,
-  Portal,
-}
+	Logo,
+	Navigation,
+	Search,
+	Title,
+	Button,
+	CustomLink,
+	BrandsList,
+	ProductFilter,
+	CardProduct,
+	PromoBlock,
+	Blog,
+	SubscribeForm,
+	Input,
+	SocialBlock,
+	SeoBlock,
+	Portal,
+};
+
+// Я бы не стал делать вот такой общий экспорт всех прям компонентов, они же отвечают за разные вещи по сути
+// Лучше делать общий экспорт, когда, допустим, есть папка Form и в ней лежат компоненты отвечающие за форму только

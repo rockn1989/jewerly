@@ -7,28 +7,33 @@ import cn from 'classnames';
 import styles from './Blog.module.scss';
 
 const MockBlog = {
-  smallTitle: 'Полезные статьи',
-  title: 'Лучшие советы по подбору дорогих подарков',
-  button: 'читать наш блог'
-}
+	smallTitle: 'Полезные статьи',
+	title: 'Лучшие советы по подбору дорогих подарков',
+	button: 'читать наш блог',
+};
 
+// Вряд ли тебе потребуется ...props, лучше пока не добавлять, а как появится необходимость - добавить
 export const Blog = ({ blogCards, className, ...props }: BlogProps) => {
-  return (
-    <section className={cn(className, styles.blogSection)} {...props}>
-      <div className="container">
-        <div className={styles.smallTitle}>{MockBlog.smallTitle}</div>
-        <Title as="h2" text={MockBlog.title} />
+	return (
+		<section className={cn(className, styles.blogSection)} {...props}>
+			<div className='container'>
+				<div className={styles.smallTitle}>{MockBlog.smallTitle}</div>
+				<Title as='h2' text={MockBlog.title} />
 
-        <ul className={styles.blogList}>
-          {blogCards.map(({ title, image }, index) => {
-            return <li key={index} className={styles.blogItem}>
-              <CardProduct className='vertical' title={title} image={image} />
-            </li>
-          })}
-        </ul>
+				<ul className={styles.blogList}>
+					{blogCards.map(({ title, image }, index) => {
+						return (
+							<li key={index} className={styles.blogItem}>
+								<CardProduct className='vertical' title={title} image={image} />
+							</li>
+						);
+					})}
+				</ul>
 
-        <CustomLink slug='/catalog' variant="black">{MockBlog.button}</CustomLink>
-      </div>
-    </section>
-  )
-}
+				<CustomLink slug='/catalog' variant='black'>
+					{MockBlog.button}
+				</CustomLink>
+			</div>
+		</section>
+	);
+};

@@ -1,5 +1,9 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 
 export interface LayoutProps {
-  children: ReactNode
+	children: ReactNode;
 }
+
+// Так файлы лучше не называть. Можно было назвать types.ts
+// К тому же я бы не стал выносить в отдельный файл только одну пропу, это как-то слишком
+// Пропы обычно выносятся, если они прям огромные с большой вложенностью или используются в нескольких местах
