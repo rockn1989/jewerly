@@ -1,0 +1,51 @@
+@use '../../scss/variables';
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 2.5rem 0;
+  width: 100%;
+  z-index: 999;
+  background: linear-gradient(0deg, rgba(51, 51, 51, 0.87), rgba(51, 51, 51, 0.87));
+
+}
+
+.logo {
+  color: var(--white);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: auto 12.6rem 1fr 12.6rem 1fr 6.6rem auto;
+  align-items: center;
+
+  @media (max-width: variables.$tablet-w) {
+    grid-template-columns: 1fr 1rem auto;
+  }
+}
+
+.nav {
+  grid-column: 1 / 1;
+}
+
+.logo {
+  grid-column: 3/4;
+  grid-row: 1;
+
+  @media (min-width: variables.$desk-w) {
+    justify-self: center;
+  }
+
+  @media (max-width: variables.$tablet-w) {
+    grid-column: 1 / 2;
+  }
+}
+
+.search {
+  grid-column: 5/6;
+}
+
+.actionBar {
+  grid-column: 7/-1;
+}

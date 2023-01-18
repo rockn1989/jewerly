@@ -1,0 +1,49 @@
+.brandsList {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  padding: 3rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  border-top: 1px solid var(--white);
+}
+
+.brandsList:before,
+.brandsList:after {
+  content: '';
+  position: absolute;
+  top: -1px;
+  width: 100vw;
+  height: 1px;
+  display: block;
+  background: var(--white);
+}
+
+.brandsList:before {
+  left: -100%;
+}
+
+.brandsList:after {
+  right: -100%;
+}
+
+
+.item {
+  padding-right: 1.5rem;
+  border-right: 1px solid var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item:last-child {
+  border-right: none;
+}
+
+.img {
+  max-width: 100%;
+  height: auto;
+}

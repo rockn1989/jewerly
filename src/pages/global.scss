@@ -1,0 +1,84 @@
+@import '../scss/variables';
+@import '../scss/fonts';
+
+:root {
+  --prime: #333333;
+  --white: #ffffff;
+  --gray: #F9F9F9;
+}
+
+html {
+  font-size: 62.5%;
+
+  @media (min-width: 1600px) {
+    font-size: 75%;
+  }
+
+  @media (max-width: $desk-w) {
+    font-size: 56%;
+  }
+
+  @media (max-width: $mob-s) {
+    font-size: 50%;
+  }
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1.6rem;
+  line-height: 2.5rem;
+  color: var(--prime);
+  font-family: $mainFont;
+  font-weight: 400;
+
+  &.modalActive {
+    overflow: hidden;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  max-width: $containerWidth;
+
+  @media (min-width: 1600px) {
+    max-width: 116rem;
+  }
+}
+
+
+*::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgba(51, 51, 51, 0.57)
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--white);
+  border-radius: 15px;
+  border: 2px solid rgba(51, 51, 51, 0.57)
+}
+
+.not-found {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+  &-title {
+    margin-bottom: 0;
+  }
+}

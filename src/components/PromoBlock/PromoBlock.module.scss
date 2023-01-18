@@ -1,0 +1,48 @@
+.promoSection {
+  padding: 10rem 0;
+  color: var(--white);
+  text-align: center;
+  background: url('/images/promo-bg.png') repeat;
+}
+
+.title {
+  margin-bottom: 4.5rem;
+}
+
+.description {
+  margin: 0 auto;
+  max-width: 730px;
+}
+
+.text {
+  margin-bottom: 6rem;
+}
+
+.formBar {
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+}
+
+.advList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+}
+
+.advItem {
+  margin-bottom: 1.5rem;
+  padding-left: 3.7rem;
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+  background: url('/images/icon-svg/triangle-right.svg') 0 center no-repeat;
+  background-size: 17px;
+}
+
+.advItem:last-child {
+  margin-bottom: 0;
+}

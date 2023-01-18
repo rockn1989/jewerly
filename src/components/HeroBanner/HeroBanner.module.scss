@@ -1,0 +1,29 @@
+.heroBanner {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.heroBannerImg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+  z-index: -1;
+}
+
+.greetings {
+  margin-bottom: 8rem;
+  text-align: center;
+  color: var(--white);
+}

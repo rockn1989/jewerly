@@ -1,0 +1,148 @@
+@use '../../../scss/variables';
+
+.detailPage {
+  margin: 13.5rem 0 12rem;
+}
+
+.product {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: flex-start;
+  gap: 3rem;
+
+  @media (min-width: variables.$tablet-w) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.productDescription {
+  @media (min-width: variables.$tablet-w) {
+    order: 2;
+  }
+}
+
+.productSlider {
+  @media (min-width: variables.$tablet-w) {
+    order: 1;
+  }
+}
+
+.productDescription {
+  padding: 5rem 4rem;
+  border: 1px solid #D6D6D6;
+  outline: 1px solid #D6D6D6;
+  outline-offset: -1rem;
+}
+
+.title {
+  margin-bottom: 3rem;
+  font-size: 2.4rem;
+  line-height: 2.8rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-family: variables.$mainFont;
+}
+
+.info {
+  margin-bottom: 3rem;
+  padding-bottom: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+  gap: 2.5rem;
+  color: #979797;
+  border-bottom: 1px solid #D6D6D6;
+}
+
+.infoBar {
+  display: inline-flex;
+  gap: 1.5rem;
+  white-space: nowrap;
+}
+
+.text {
+  margin-bottom: 3rem;
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+}
+
+.price {
+  margin-bottom: 3rem;
+  font-size: 2.4rem;
+  line-height: 3rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: 1fr;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 1.5rem 3rem;
+
+  @media (min-width: variables.$mob-s) {
+    grid-template-columns: auto auto;
+  }
+}
+
+.buttonBorder {
+  padding: 1.5rem;
+  border: 1px solid var(--prime);
+}
+
+.image {
+  width: 100%;
+  height: auto;
+}
+
+.pay {
+  padding: 4rem 6rem;
+  max-width: 76rem;
+  width: calc(100% - 2rem);
+  text-align: center;
+  background: #F9F9F9;
+  border-radius: 1rem;
+
+  @media (min-width: variables.$desk-w) {
+    padding: 9rem 12rem;
+
+  }
+}
+
+.payTitle {
+  margin-bottom: 1rem;
+  font-size: 2.8rem;
+  line-height: 3rem;
+}
+
+.payText {
+  margin: 0;
+}
+
+.payButton {
+  margin-top: 3rem;
+}
+
+.notification {
+  padding: 3rem;
+  max-width: 474px;
+  background: #F9F9F9;
+  box-shadow: 1rem 1rem 1.5rem rgba(0, 0, 0, 0.25);
+  border-radius: 2.4rem;
+}
+
+.notificationTitle {
+  margin-bottom: 1.7rem;
+  font-size: 2.2rem;
+  line-height: 2.6rem;
+}
+
+.notificationText {
+  margin: 0;
+  font-size: 1.8rem;
+  line-height: 2.1rem;
+}

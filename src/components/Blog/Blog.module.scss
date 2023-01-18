@@ -1,0 +1,37 @@
+@use '../../scss/variables';
+
+.blogSection {
+  margin: 12rem 0;
+  text-align: center;
+}
+
+.blogList {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 6rem;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+
+  @media (min-width: variables.$mob-s) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: variables.$tablet-w) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+}
+
+.blogItem {
+  &:last-child {
+    @media (min-width: variables.$mob-s) {
+      grid-column: span 2;
+    }
+
+    @media (min-width: variables.$tablet-w) {
+      grid-column: auto / span 1;
+    }
+  }
+}
