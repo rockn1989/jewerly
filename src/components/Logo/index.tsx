@@ -6,9 +6,9 @@ import cn from 'classnames';
 import styles from './Logo.module.scss';
 
 export const Logo = ({ className }: LogoProps) => {
-  return (
-    <Link href="/" className={cn(className, styles.logo)}>
-      <LogoIcon />
-    </Link>
-  )
+	return (
+		<Link href="/" className={cn(className, styles.logo)}>
+			<LogoIcon />
+		</Link>
+	)
 }

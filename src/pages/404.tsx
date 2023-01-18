@@ -1,5 +1,5 @@
-import { Title } from "../components";
-import { Layout } from "../layout";
+import { Title } from '../components';
+import { Layout } from '../layout';
 
 const Error404 = () => {
   return (
