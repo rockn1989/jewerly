@@ -31,7 +31,7 @@ interface HomeProps {
   }[]
 }
 
-export default function Home({ productFilter, blog, posts }: HomeProps) {
+const Home = ({ productFilter, blog, posts }: HomeProps) => {
 
   return (
     <Layout>
@@ -53,7 +53,7 @@ export default function Home({ productFilter, blog, posts }: HomeProps) {
   )
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
 
   try {
     const [productData, blogData, postsData] = await Promise.all([
@@ -66,30 +66,11 @@ export async function getStaticProps() {
     const { blog } = blogData['data'];
     const { socialPosts: posts } = postsData['data'];
 
-    if (productFilter.length === 0) {
-      return {
-        productFilter: []
-      }
-    }
-
-    if (blog.length === 0) {
-      return {
-        blog: []
-      }
-    }
-
-
-    if (posts.length === 0) {
-      return {
-        blog: []
-      }
-    }
-
     return {
       props: {
-        productFilter,
-        blog,
-        posts
+        productFilter: productFilter.length !== 0 ? productFilter : [],
+        blog: blog.length !== 0 ? blog : [],
+        posts: posts.length !== 0 ? posts : [],
       },
     }
   } catch (error) {
@@ -99,3 +80,5 @@ export async function getStaticProps() {
     }
   }
 }
+
+export default Home;

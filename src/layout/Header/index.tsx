@@ -5,12 +5,12 @@ import { Logo, Navigation, Search } from '../../components';
 import { ActionsBar } from '../../components/ActionsBar';
 import { useWidth } from '../../hooks/useWidth';
 
-export const Header = ({ className, ...props }: HeaderProps) => {
+export const Header = ({ className, ...rest }: HeaderProps) => {
 
   const width = useWidth();
 
   return (
-    <header {...props} className={cn(className, styles.header)}>
+    <header {...rest} className={cn(className, styles.header)}>
       <div className="container">
         <div className={styles.grid}>
           <Logo className={styles.logo} />

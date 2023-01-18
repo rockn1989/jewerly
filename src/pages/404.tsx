@@ -1,7 +1,7 @@
 import { Title } from "../components";
 import { Layout } from "../layout";
 
-export function Error404(): JSX.Element {
+const Error404 = () => {
   return (
     <Layout>
       <div className="not-found">

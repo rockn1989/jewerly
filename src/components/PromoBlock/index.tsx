@@ -6,9 +6,9 @@ import { CustomLink } from '../CustomLink';
 import cn from 'classnames';
 import styles from './PromoBlock.module.scss';
 
-export const PromoBlock = ({ title, smallTitle, description, withForm = false, className, ...props }: PromoBlockProps) => {
+export const PromoBlock = ({ title, smallTitle, description, withForm = false, className, ...rest }: PromoBlockProps) => {
   return (
-    <section className={cn(className, styles.promoSection)} {...props}>
+    <section className={cn(className, styles.promoSection)} {...rest}>
       <div className="container">
         <div className={styles.smallTitle}>{smallTitle}</div>
         <Title as='h2' text={title} className={styles.title} />

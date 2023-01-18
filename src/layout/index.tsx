@@ -1,7 +1,12 @@
+import { ReactNode } from 'react';
 import { Header } from './Header';
 import { Footer } from './Footer';
-import { LayoutProps } from './Layout.props';
+
 import styles from './Layout.module.scss';
+
+interface LayoutProps {
+  children: ReactNode
+}
 
 export const Layout = ({ children }: LayoutProps): JSX.Element => {
   return (
@@ -11,7 +16,7 @@ export const Layout = ({ children }: LayoutProps): JSX.Element => {
         {children}
       </main>
       <Footer className={styles.footer} />
-      <div id="portal"></div>
+      <div id="modals"></div>
     </div>
   )
 }

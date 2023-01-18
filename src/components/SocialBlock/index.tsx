@@ -7,9 +7,9 @@ import cn from 'classnames';
 import styles from './SocialBlock.module.scss';
 
 
-export const SocialBlock = ({ posts, className, ...props }: SocialBlockProps) => {
+export const SocialBlock = ({ posts, className, ...rest }: SocialBlockProps) => {
   return (
-    <section className={styles.socialBlock} {...props}>
+    <section className={styles.socialBlock} {...rest}>
       <div className="container">
         <Title as="h2" text="Мы в социальных сетях" />
 

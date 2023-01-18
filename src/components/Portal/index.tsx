@@ -6,7 +6,7 @@ import { PortalProps } from "./Portal.props"
 import cn from 'classnames';
 import styles from './Portal.module.scss';
 
-export const Portal = ({ children, show, onClickForClose, className, ...props }: PortalProps) => {
+export const Portal = ({ children, show, onClickForClose, className, ...rest }: PortalProps) => {
 
   const overlay = useRef<HTMLDivElement>(null);
 
@@ -38,13 +38,13 @@ export const Portal = ({ children, show, onClickForClose, className, ...props }:
             className={styles.overlay}
             onClick={handleCloseModalClick}
             ref={overlay}
-            {...props}
+            {...rest}
           >
             <div className={cn(className, styles.container)}>
               {children}
             </div>
           </div>,
-          document.getElementById('portal') as HTMLElement
+          document.getElementById('modals') as HTMLElement
         )
       )}
     </>

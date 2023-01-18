@@ -3,7 +3,7 @@ import { TitleProps } from './Title.props';
 import styles from './Title.module.scss';
 import cn from 'classnames';
 
-export const Title = ({ as: Tag, text, className, ...props }: TitleProps) => {
+export const Title = ({ as: Tag, text, className, ...rest }: TitleProps) => {
   let variant = '';
 
   switch (Tag) {
@@ -20,6 +20,6 @@ export const Title = ({ as: Tag, text, className, ...props }: TitleProps) => {
   }
 
   return (
-    <Tag className={cn(className, variant)} {...props}>{text}</Tag>
+    <Tag className={cn(className, variant)} {...rest}>{text}</Tag>
   )
 };

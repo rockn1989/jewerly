@@ -2,9 +2,9 @@ import { ModalProps } from './Modal.props';
 
 import cn from 'classnames';
 import styles from './Modal.module.scss';
-import React, { ForwardedRef, forwardRef } from 'react';
+import React, { forwardRef } from 'react';
 
-export const Modal = forwardRef<HTMLDivElement, ModalProps>(({ className, onClickForClose, children, ...props }, ref) => {
+export const Modal = forwardRef<HTMLDivElement, ModalProps>(({ className, onClickForClose, children, ...rest }, ref) => {
 
   const handleModalClose = (event: React.MouseEvent): void => {
     if (event.target === ref?.current) {
@@ -17,7 +17,7 @@ export const Modal = forwardRef<HTMLDivElement, ModalProps>(({ className, onClic
       ref={ref}
       className={styles.overlay}
       onClick={(event) => handleModalClose(event)}
-      {...props}
+      {...rest}
     >
       <div className={cn(className, styles.container)}>
         {children}
@@ -27,5 +27,3 @@ export const Modal = forwardRef<HTMLDivElement, ModalProps>(({ className, onClic
 });
 
 Modal.displayName = 'Modal';
-
-// export {Modal};

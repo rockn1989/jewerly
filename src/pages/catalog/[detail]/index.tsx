@@ -1,21 +1,22 @@
 import Image from 'next/image';
 import { GetStaticPropsContext } from "next";
+import { DetailedHTMLProps, HTMLAttributes, useState } from "react";
 import { API } from "../../../api/api";
 import { Layout } from "../../../layout";
+import { Button, Portal, PromoBlock, SeoBlock, Title } from "../../../components";
 import axios from "axios";
 
 import cn from 'classnames';
 import styles from './detail.module.scss';
-import { DetailedHTMLProps, HTMLAttributes, useState } from "react";
-import { Button, Portal, PromoBlock, SeoBlock, Title } from "../../../components";
 
-interface DetailPageProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
+interface DetailPageProps {
   title: string;
   type: string;
   image: string;
   slug: string;
   price: number;
   description: string;
+  className?: string;
 }
 
 const MockDetailPage = {
@@ -34,14 +35,14 @@ const MockDetailPage = {
   }
 }
 
-const DetailPage = ({ title, type, image, price, description, className, ...props }: DetailPageProps) => {
+const DetailPage = ({ title, type, image, price, description, className, ...rest }: DetailPageProps) => {
 
   const [visible, setIsVisible] = useState<boolean>(false);
   const [notification, setNotification] = useState<boolean>(false);
 
   return (
     <Layout>
-      <section className={cn(className, styles.detailPage)} {...props}>
+      <section className={cn(className, styles.detailPage)} {...rest}>
         <div className="container">
           <div className={styles.product}>
             <div className={styles.productDescription}>
@@ -172,9 +173,11 @@ export async function getStaticProps({
     }
   }
 
+  const { title, type, image, price, description } = card;
+
   return {
     props: {
-      ...card
+      title, type, image, price, description
     }
   }
 }

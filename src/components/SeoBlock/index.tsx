@@ -38,11 +38,11 @@ const MockSeoBlock = {
   ]
 }
 
-export const SeoBlock = ({ withTitle = false, title, className, ...props }: SeoBlockProps) => {
+export const SeoBlock = ({ withTitle = false, title, className, ...rest }: SeoBlockProps) => {
   const [show, setIsShow] = useState<boolean>(false);
 
   return (
-    <section className={cn(className, styles.seoBlock)} {...props}>
+    <section className={cn(className, styles.seoBlock)} {...rest}>
 
       {withTitle && title && (
         <Title as="h2" text={title} className={styles.title} />

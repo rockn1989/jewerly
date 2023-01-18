@@ -13,7 +13,7 @@ interface SubscribeFormDataProps {
   email: string
 }
 
-export const SubscribeForm = ({ className, ...props }: SubscribeFormProps) => {
+export const SubscribeForm = ({ className, ...rest }: SubscribeFormProps) => {
   const [success, setSuccess] = useState<boolean>(false);
   const [email, setEmail] = useState<string>('');
   const { register, handleSubmit, reset, clearErrors, formState: { errors } } = useForm<SubscribeFormDataProps>();
@@ -30,7 +30,7 @@ export const SubscribeForm = ({ className, ...props }: SubscribeFormProps) => {
   return (
     <form
       className={cn(className, styles.subscribeForm)}
-      {...props}
+      {...rest}
       onSubmit={handleSubmit(onSubmit)}
     >
       <div className={styles.wrapper}>

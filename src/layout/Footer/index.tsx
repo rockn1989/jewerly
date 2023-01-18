@@ -1,7 +1,7 @@
 
 
-export const Footer = ({ ...props }) => {
+export const Footer = ({ ...rest }) => {
   return (
-    <footer {...props}>Footer</footer>
+    <footer {...rest}>Footer</footer>
   )
 }
