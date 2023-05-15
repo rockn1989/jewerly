@@ -45,7 +45,6 @@ const Catalog = ({ catalogCards }: CatalogPageProps) => {
 										<div className={styles.catalogRow} key={index}>
 											{cardsSlice.slice(index, index + 3).map((card, index) => {
 												return (
-													// Тут лучше деструктуризировать, а то не ясно какие пропы передаются, может даже не все пропы передавать надо будет
 													<CardCatalog {...card} key={index} />
 												);
 											})}

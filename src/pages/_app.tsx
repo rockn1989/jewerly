@@ -4,6 +4,7 @@ import Head from 'next/head'
 import './global.scss';
 
 export default function App({ Component, pageProps }: AppProps) {
+
   return (
     <>
       <Head>
@@ -11,6 +12,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/favicon.svg" />
         <meta property='og:locale' content="ru_RU" />
       </Head>
+
       <Component {...pageProps} />
     </>
   )

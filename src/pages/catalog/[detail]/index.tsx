@@ -8,6 +8,7 @@ import axios from "axios";
 import cn from 'classnames';
 import styles from './detail.module.scss';
 import { useState } from 'react';
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 
 interface DetailPageProps {
 	title: string;
@@ -48,108 +49,118 @@ const DetailPage = ({
 	const [notification, setNotification] = useState<boolean>(false);
 
 	return (
-		<Layout>
-			<section className={cn(className, styles.detailPage)} {...props}>
-				<div className='container'>
-					<div className={styles.product}>
-						<div className={styles.productDescription}>
+		<GoogleReCaptchaProvider 
+			reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? ''}
+			scriptProps={{
+				async: false,
+				defer: false,
+				appendTo: "head",
+				nonce: undefined,
+			}}
+		>		
+			<Layout>
+				<section className={cn(className, styles.detailPage)} {...props}>
+					<div className='container'>
+						<div className={styles.product}>
+							<div className={styles.productDescription}>
+								<Title
+									as='h1'
+									text={`${type} ${title}`}
+									className={styles.title}
+								/>
+
+								<div className={styles.info}>
+									<div className={styles.infoBar}>
+										<div>{MockDetailPage.labels.type}:</div> <div>{type}</div>
+									</div>
+									<div className={styles.infoBar}>
+										<div>{MockDetailPage.labels.brand}:</div> <div>{title}</div>
+									</div>
+								</div>
+
+								<div className={styles.text}>{description}</div>
+								<div className={styles.price}>{price}</div>
+
+								<div className={styles.buttons}>
+									<Button variant='black' onClick={() => setIsVisible(!visible)}>
+										{MockDetailPage.buttons.buy}
+									</Button>
+
+									<Button
+										variant='white'
+										className={styles.buttonBorder}
+										onClick={() => setNotification(!notification)}
+									>
+										{MockDetailPage.buttons.add}
+									</Button>
+								</div>
+							</div>
+
+							<div className={styles.productSlider}>
+								<Image
+									src={image}
+									alt={title}
+									width={540}
+									height={430}
+									className={styles.image}
+								/>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<SeoBlock withTitle={true} title={MockDetailPage.seoTitle} />
+
+				<PromoBlock
+					title={MockDetailPage.promoBlock.title}
+					smallTitle={MockDetailPage.promoBlock.smallTitle}
+					withForm={true}
+				/>
+
+				{visible && (
+					<Portal
+						show={visible}
+						onClickForClose={() => setIsVisible(!visible)}
+						className={styles.pay}
+					>
+						<div>
 							<Title
-								as='h1'
-								text={`${type} ${title}`}
-								className={styles.title}
+								as='h2'
+								text={'Онлайн оплата временно не доступна'}
+								className={styles.payTitle}
 							/>
-
-							<div className={styles.info}>
-								<div className={styles.infoBar}>
-									<div>{MockDetailPage.labels.type}:</div> <div>{type}</div>
-								</div>
-								<div className={styles.infoBar}>
-									<div>{MockDetailPage.labels.brand}:</div> <div>{title}</div>
-								</div>
-							</div>
-
-							<div className={styles.text}>{description}</div>
-							<div className={styles.price}>{price}</div>
-
-							<div className={styles.buttons}>
-								<Button variant='black' onClick={() => setIsVisible(!visible)}>
-									{MockDetailPage.buttons.buy}
-								</Button>
-
-								<Button
-									variant='white'
-									className={styles.buttonBorder}
-									onClick={() => setNotification(!notification)}
-								>
-									{MockDetailPage.buttons.add}
-								</Button>
-							</div>
+							<p className={styles.payText}>
+								Выбрать и оплатить товар вы можете в нашем фирменном магазине
+							</p>
+							<Button
+								variant='black'
+								className={styles.payButton}
+								onClick={() => setIsVisible(!visible)}
+							>
+								Понятно
+							</Button>
 						</div>
+					</Portal>
+				)}
 
-						<div className={styles.productSlider}>
-							<Image
-								src={image}
-								alt={title}
-								width={540}
-								height={430}
-								className={styles.image}
+				{notification && (
+					<Portal
+						show={notification}
+						onClickForClose={() => setNotification(!notification)}
+						className={styles.notification}
+					>
+						<div>
+							<Title
+								as='h2'
+								text={'Подвеска Dolce & Gabbara (1)'}
+								className={styles.notificationTitle}
 							/>
+							<p className={styles.notificationText}>Товар добавлен в корзину</p>
 						</div>
-					</div>
-				</div>
-			</section>
-
-			<SeoBlock withTitle={true} title={MockDetailPage.seoTitle} />
-
-			<PromoBlock
-				title={MockDetailPage.promoBlock.title}
-				smallTitle={MockDetailPage.promoBlock.smallTitle}
-				withForm={true}
-			/>
-
-			{visible && (
-				<Portal
-					show={visible}
-					onClickForClose={() => setIsVisible(!visible)}
-					className={styles.pay}
-				>
-					<div>
-						<Title
-							as='h2'
-							text={'Онлайн оплата временно не доступна'}
-							className={styles.payTitle}
-						/>
-						<p className={styles.payText}>
-							Выбрать и оплатить товар вы можете в нашем фирменном магазине
-						</p>
-						<Button
-							variant='black'
-							className={styles.payButton}
-							onClick={() => setIsVisible(!visible)}
-						>
-							Понятно
-						</Button>
-					</div>
-				</Portal>
-			)}
-
-			{notification && (
-				<Portal
-					show={notification}
-					onClickForClose={() => setNotification(!notification)}
-					className={styles.notification}
-				>
-					<div>
-						<Title
-							as='h2'
-							text={'Подвеска Dolce & Gabbara (1)'}
-							className={styles.notificationTitle}
-						/>
-						<p className={styles.notificationText}>Товар добавлен в корзину</p>
-					</div>
-				</Portal>
-			)}
-		</Layout>
+					</Portal>
+				)}
+			</Layout>
+		</GoogleReCaptchaProvider>
 	);
 };
 
