@@ -54,7 +54,7 @@ const Home = ({ productFilter, blog, posts }: HomeProps) => {
 	)
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
 	try {
 		const [productData, blogData, postsData] = await Promise.all([
 			await axios.get(API.productFilter.url),
